@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kravate - Sve o Kravatama</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #EDC9AF; /* Bež boja */
+            color: #333;
+        }
+
+        /* Gornji dio stranice sa logom i anchorima */
+        .top-bar {
+            background-color: #fff;
+            padding: 5px 20px; /* Smanjen padding za tanji izgled */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .top-bar img {
+            max-width: 120px; /* Smanjen logo za tanji izgled */
+        }
+
+        .top-bar nav a {
+            margin-left: 15px; /* Manji razmak između anchor linkova */
+            text-decoration: none;
+            color: #333;
+            font-size: 14px; /* Smanjena veličina fonta za tanji header */
+        }
+
+        .top-bar nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Stilizacija sekcija */
+        section {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #000;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Stilizacija footera */
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function showContent(contentId) {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active'); // Sakrij sve sekcije
+            });
+            document.getElementById(contentId).classList.add('active'); // Prikaži odabranu sekciju
+        }
+
+        function showKravata(type) {
+            const content = {
+                standardna: `
+                    <strong><br>Standardna kravata:</strong><br><br>
+                    Najčešći oblik kravate, dugačka tkanina koja se nosi omotana oko vrata, s čvorom sprijeda.<br>
+                    Širina kravate može varirati, od vrlo uskih (tzv. "slim" kravata) do širokih, ovisno o modnim trendovima.
+                `,
+                leptir: `
+                    <strong><br>Leptir-mašna (papillon):</strong><br><br>
+                    Kravata u obliku leptira koja se nosi uz smoking ili formalno odijelo. Često se koristi za vrlo svečane događaje, poput vjenčanja ili formalnih večera.
+                `,
+                ascot: `
+                    <strong><br>Ascot kravata:</strong><br><br>
+                    Široka, kratka kravata koja se nosi ispod ovratnika košulje, vezana u labaviji čvor. Često se povezuje s formalnim britanskim odjevnim kodom i nosi na događajima poput konjskih utrka.
+                `,
+                bolo: `
+                    <strong><br>Bolo kravata:</strong><br><br>
+                    Zapadnjačka kravata koju čine dvije tanke vrpce spojene ukrasnom kopčom. Popularna je u Americi, osobito na jugozapadu.
+                `,
+            };
+            document.getElementById('vrsta-kravata').innerHTML = content[type];
+        }
+        function showTie(type) {
+            const content = {
+                windsor_cvor: `
+                    <strong><br>Windsor čvor:</strong><br><br>
+                    Windsor čvor je klasičan i simetričan čvor poznat po svojoj eleganciji. Idealno se koristi za formalne prigode i zahtijeva nekoliko jednostavnih koraka: širi deo prebacite preko užeg, obavijte ispod, provucite kroz omču i zategnite.
+                `,
+                leptir1: `
+                    <strong><br>Leptir-mašna (papillon):</strong><br><br>
+                    Leptir mašna je sofisticirana kravata koja se najčešće nosi na formalnim događanjima. Može biti unaprijed vezana ili ručno vezana, a karakterizira je klasičan izgled. Savršena je za dodavanje stila i šarma odijelu.
+                `,
+                ascot1: `
+                    <strong><br>Ascot čvor:</strong><br><br>
+                    Ascot čvor se nosi na svečanim prigodama poput konjičkih utrka. Širine je i daje elegantan izgled. Veže se prebacivanjem i savijanjem kravate ispod ovratnika, stvarajući jedinstven stil.
+                `,
+                bolo1: `
+                    <strong><br>Bolo:</strong><br><br>
+                    Bolo kravata je kratka kravata s kopčom koja se povezuje s western kulturom. Nosivi su u ležernijim prilikama, a vežu se jednostavno provlačenjem užeg dela kroz kopču, dodajući jedinstvenost i stil.
+                `,
+            };
+            document.getElementById('vrsta-cvorova').innerHTML = content[type];
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Gornji dio stranice s logom i navigacijom -->
+    <div class="top-bar">
+        <img src="kravatapp.png" alt="Logo KravatApp">
+        <nav>
+            <a href="#povijest">Povijest</a>
+            <a href="#vrste-kravata">Vrste Kravata</a>
+            <a href="#vrste-cvorova">Vrste Čvorova</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+    </div>
+
+    <section id="povijest">
+        <h2>Povijest Kravate</h2>
+        <p>
+            <strong>Porijeklo:</strong> Kravata, kao jedan od najprepoznatljivijih modnih dodataka u svijetu, ima bogatu povijest koja datira iz 17. stoljeća. Njezino porijeklo veže se uz hrvatske vojnike koji su tijekom Tridesetogodišnjeg rata (1618.-1648.) nosili platnene marame oko vrata kao dio uniforme. Ove marame, vezane na specifičan način, bile su funkcionalne, ali su također imale estetsku ulogu, te su često bile izrađene od finijih materijala poput svile, osobito kod viših časnika.
+        </p>
+        <p>
+            Francuski kralj Luj XIV., poznat kao Kralj Sunce, prvi je prepoznao šarm ovog neobičnog dodatka. Kada su hrvatski plaćenici stigli na njegov dvor, kralj je bio toliko impresioniran njihovim stilom da je odlučio usvojiti ovu modu. Tako je kravata postala popularna u francuskom društvu, koje je tada bilo središte europske mode. Iz francuskog dvora, moda nošenja kravate proširila se na ostatak Europe. Zanimljivo je da riječ "kravata" potječe upravo od hrvatske riječi "Hrvat", što svjedoči o njezinom podrijetlu.
+        </p>
+        <p>
+            <strong>Razvoj kroz stoljeća:</strong>
+        </p>
+        <p>
+            <em>18. stoljeće:</em> Tijekom 18. stoljeća, kravate su se razvile u luksuzne dodatke, a stil nošenja postao je sve složeniji. Čipkasti ovratnici, poznati kao jaboti, bili su omiljeni među europskim plemstvom. Ovi raskošni dodaci često su se nosili na dvorovima, a izrađivali su se od finih materijala poput svile i čipke. Veličina i složenost čipkastih kravata bila je simbol društvenog statusa, a nosili su ih samo najbogatiji i najutjecajniji slojevi društva.
+        </p>
+        <p>
+            <em>19. stoljeće:</em> Krajem 18. i početkom 19. stoljeća, moda kravate postala je jednostavnija i formalnija, što je odražavalo promjene u društvenim normama i stilovima. U doba regentstva u Engleskoj, kravate su se nosile usko vezane oko vrata, često u kombinaciji s krutim ovratnicima košulja. Ovaj stil simbolizirao je diskretnu eleganciju i suzdržanost, a muškarci su počeli preferirati manje razmetljive modele.
+        </p>
+        <p>
+            Tijekom viktorijanskog doba, u drugoj polovici 19. stoljeća, kravate su postale više nalik onima koje danas poznajemo. Oblikovali su se različiti načini vezanja, uključujući popularni "four-in-hand" čvor, koji je danas najčešće korišten. Kravate su postale kraće i šire, a koristili su se tamniji tonovi i jednostavniji uzorci, što je odražavalo tadašnju konzervativnu estetiku.
+        </p>
+        <p>
+            <em>20. stoljeće:</em> U 20. stoljeću kravata je doživjela veliki uspon, postajući nezaobilazan dio muškog poslovnog i formalnog odijevanja. Početkom stoljeća, kravate su bile duže i tanje, a zatim su 1920-ih i 1930-ih postale šire, često s uzorcima i živopisnim bojama.
+        </p>
+        <p>
+            Tijekom 1950-ih i 1960-ih, popularnost su stekle tanje kravate, koje su odgovarale minimalističkoj i elegantnoj modnoj estetici tog razdoblja. Nasuprot tome, 1970-e su bile obilježene ekstravagantnim modnim izrazima, pa su kravate postale šire i živopisnije, s upečatljivim uzorcima poput geometrijskih oblika i apstraktnih motiva.
+        </p>
+        <p>
+            U 1980-ima, vratila se moda uskih kravata, potaknuta utjecajem rock glazbe i modernijih modnih trendova. U 1990-ima i početkom 21. stoljeća, kravate su se ponovno stabilizirale u širinama i stilovima, te su postale vrlo svestran modni dodatak, prilagodljiv različitim prilikama.
+        </p>
+        <p>
+            Danas je kravata simbol profesionalnosti, ali i osobnog stila. Može se naći u raznim materijalima, bojama i uzorcima, a njezina važnost u modnoj industriji ostaje nepromijenjena. Iako se moda s vremenom mijenja, kravata ostaje klasičan dodatak koji povezuje povijest i modernost.
+        </p>
+    </section>
+    
+    
+
+   <!-- Vrste kravata -->
+   <section id="vrste-kravata">
+    <h2>Vrste Kravata</h2>
+    <div class="buttons">
+        <button onclick="showKravata('standardna')">Standardna</button>
+        <button onclick="showKravata('leptir')">Leptir-mašna</button>
+        <button onclick="showKravata('ascot')">Ascot</button>
+        <button onclick="showKravata('bolo')">Bolo</button>
+    </div>
+    <div id="vrsta-kravata" class="content-section active">
+        <!-- Ovdje će se prikazivati opis kravate -->
+        <p>Odaberite vrstu kravate da biste vidjeli više informacija.</p>
+    </div>
+</section>
+
+
+    <!-- Vrste čvorova kravata -->
+    <section id="vrste-cvorova">
+        <h2>Vrste Čvorova Kravata</h2>
+        <div class="buttons">
+            <button onclick="showTie('windsor_cvor')">Standardna</button>
+            <button onclick="showTie('leptir1')">Leptir-mašna</button>
+            <button onclick="showTie('ascot1')">Ascot</button>
+            <button onclick="showTie('bolo1')">Bolo</button>
+        </div>
+        <div id="vrsta-cvorova" class="content-section active">
+        <!-- Ovdje će se prikazivati opis kravate -->
+        <p>Odaberite vrstu kravate da biste vidjeli više informacija.</p>
+    </div>
+    </section>
+
+    <!-- Kontakt (Footer) -->
+    <footer id="kontakt">
+        <p>Kontaktirajte nas putem e-pošte: <a href="mailto:info@kravatapp.com">info@kravatapp.com</a></p>
+        <p>© 2024 KravatApp</p>
+    </footer>
+
+</body>
+</html>
